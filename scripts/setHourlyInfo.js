@@ -15,7 +15,7 @@ function setHourlyInfo(hours) {
     hourlyTemperature.setAttribute("class", "hourly-temperature");
 
     hourlyTime.textContent = hours[i]["datetime"].slice(0, 5);
-    hourlyWeatherIcon.src = `assets/weather-icons/${hours[i]["icon"]}.svg`;
+    hourlyWeatherIcon.src = "assets/weather-icons/" + hours[i]["icon"] + ".svg";
     hourlyTemperature.textContent = hours[i]["temp"] + "°";
 
     hourlyCard.appendChild(hourlyTime);
