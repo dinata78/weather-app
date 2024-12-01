@@ -1,4 +1,5 @@
-import { getWeatherData, setMainInfo } from "./script.js"
+import { getWeatherData } from "./getWeatherData.js"
+import { setMainInfo } from "./setMainInfo.js";
 
 const searchButton = document.querySelector("#search-button");
 
