@@ -7,7 +7,7 @@ import { setSunriseSunsetTime } from "./setSunriseSunsetTime.js";
 import { translateDate } from "./translateDate.js";
 export { renderDayInfo, renderHourInfo };
 
-function renderDayInfo(days, index) {
+function renderDayInfo(days, index) { //update current info's time, render everything on the page except for location using daily date
   setCurrentInfoTime(
     translateDate(days[index]["datetime"])
   );
@@ -39,7 +39,7 @@ function renderDayInfo(days, index) {
   );
 }
 
-function renderHourInfo(hours, index) {
+function renderHourInfo(hours, index) { //update current-info's time, render main-info and additional info's data using hourly data
   setCurrentInfoTime(
     document.querySelector("#current-info-time").textContent.slice(0, 6) 
     + " " 

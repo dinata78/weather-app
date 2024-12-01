@@ -1,6 +1,6 @@
 export { setAdditionalInfo };
 
-function uvIndexMeaning(uvIndex) {
+function uvIndexMeaning(uvIndex) { //return uv index's description/meaning
   if (uvIndex === 0) return "Very Weak";
   else if (uvIndex <= 2) return "Weak";
   else if (uvIndex <= 5) return "Moderate";
@@ -9,7 +9,7 @@ function uvIndexMeaning(uvIndex) {
   else if (uvIndex > 10) return "Extreme";
 }
 
-function setAdditionalInfo(uv_index, feels_like, humidity_, chance_of_rain, wind_speed, visibility_) {
+function setAdditionalInfo(uv_index, feels_like, humidity_, chance_of_rain, wind_speed, visibility_) { //update additional info's data in the DOM
   const uvIndex = document.querySelector("#uv-index");
   const feelsLike = document.querySelector("#feels-like");
   const humidity = document.querySelector("#humidity");

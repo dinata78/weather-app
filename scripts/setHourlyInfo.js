@@ -1,7 +1,7 @@
 import { renderHourInfo } from "./render.js";
 export { setHourlyInfo };
 
-function setHourlyInfo(hours) {
+function setHourlyInfo(hours) { //update hourly-info's data in the DOM
   const hourlyInfo = document.querySelector("#hourly-info");
   hourlyInfo.textContent = "";
 

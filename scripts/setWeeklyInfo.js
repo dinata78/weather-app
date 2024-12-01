@@ -2,7 +2,7 @@ export { setWeeklyInfo };
 import { renderDayInfo } from "./render.js";
 import { translateDate } from "./translateDate.js";
 
-function setWeeklyInfo(days) {
+function setWeeklyInfo(days) { //update weekly-info's data in the DOM
   const weeklyInfo = document.querySelector("#weekly-info");
   weeklyInfo.textContent = "";
 
