@@ -37,7 +37,7 @@ header {
   width: min(60vw, 350px);
   padding-inline: 5%;
   font-size: min(3.5vw, 18px);
-  color: var(--main-color);
+  color: var(--main-light-color);
 }
 
 #search-input::placeholder {

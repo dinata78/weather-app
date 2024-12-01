@@ -1,10 +1,10 @@
-import { getWeatherData } from "./script.js"
+import { getWeatherData, setMainInfo } from "./script.js"
 
 const searchButton = document.querySelector("#search-button");
 
 searchButton.addEventListener("click", () => {
   const weatherData = getWeatherData();
   weatherData.then((data) => {
-    console.log(data.location);
+    setMainInfo(data.location, data.days[0].temp, data.days[0].icon, data.days[0].conditions);
   });
 });
