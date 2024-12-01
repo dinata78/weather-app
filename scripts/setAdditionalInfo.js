@@ -9,15 +9,14 @@ function uvIndexMeaning(uvIndex) {
   else if (uvIndex > 10) return "Extreme";
 }
 
-function setAdditionalInfo(uv_index, feels_like, humidity_, chance_of_rain, wind_speed, visibility_, sunrise_time, sunset_time) {
+function setAdditionalInfo(uv_index, feels_like, humidity_, chance_of_rain, wind_speed, visibility_) {
   const uvIndex = document.querySelector("#uv-index");
   const feelsLike = document.querySelector("#feels-like");
   const humidity = document.querySelector("#humidity");
   const chanceOfRain = document.querySelector("#chance-of-rain");
   const windSpeed = document.querySelector("#wind-speed");
   const visibility = document.querySelector("#visibility");
-  const sunriseTime = document.querySelector("#sunrise-time");
-  const sunsetTime = document.querySelector("#sunset-time");
+  
 
   uvIndex.textContent = uv_index + " " + uvIndexMeaning(uv_index);
   feelsLike.textContent = feels_like + "°";
@@ -25,7 +24,5 @@ function setAdditionalInfo(uv_index, feels_like, humidity_, chance_of_rain, wind
   chanceOfRain.textContent = chance_of_rain + "%";
   windSpeed.textContent = wind_speed + " km/h";
   visibility.textContent = visibility_ + " km";
-  sunriseTime.textContent = sunrise_time.slice(0, 5);
-  sunsetTime.textContent = sunset_time.slice(0, 5);
 }
 

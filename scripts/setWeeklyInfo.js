@@ -1,11 +1,6 @@
 export { setWeeklyInfo };
-
-function translateDate(dateInNum) {
-  const [ , month, date ] = dateInNum.split("-");
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  
-  return months[month - 1] + " " + date; 
-}
+import { renderDayInfo } from "./render.js";
+import { translateDate } from "./translateDate.js";
 
 function setWeeklyInfo(days) {
   const weeklyInfo = document.querySelector("#weekly-info");
@@ -28,6 +23,10 @@ function setWeeklyInfo(days) {
     weeklyCard.appendChild(weeklyDate);
     weeklyCard.appendChild(weeklyWeatherIcon);
     weeklyCard.appendChild(weeklyTemperature);
+
+    weeklyCard.addEventListener("click", () => {
+      renderDayInfo(days, i);
+    })
 
     weeklyInfo.appendChild(weeklyCard);
   }

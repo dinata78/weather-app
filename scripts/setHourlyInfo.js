@@ -1,3 +1,4 @@
+import { renderHourInfo } from "./render.js";
 export { setHourlyInfo };
 
 function setHourlyInfo(hours) {
@@ -21,6 +22,10 @@ function setHourlyInfo(hours) {
     hourlyCard.appendChild(hourlyTime);
     hourlyCard.appendChild(hourlyWeatherIcon);
     hourlyCard.appendChild(hourlyTemperature);
+
+    hourlyCard.addEventListener("click", () => {
+      renderHourInfo(hours, i);
+    });
 
     hourlyInfo.appendChild(hourlyCard);
   }
