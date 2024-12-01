@@ -22,7 +22,6 @@
     <div id="main-info">
       <span id="location">Oslo, Norge</span>
       <h1 id="temperature">-3°</h1>
-      <span id="feels-like">Feels like -4°</span>          
       <div id="condition-container">
         <img id="weather-icon" src="assets/weather-icons/snow.svg"/>
         <span id="condition">Snow</span>  
@@ -46,7 +45,7 @@
       </div>
       <div class="hourly-card">
         <span class="hourly-time">03:00</span>
-        <img src="assets/weather-icons/cloudy.svg">
+        <img src="assets/weather-icons/clear-day.svg">
         <span class="hourly-temperature">3°</span>
       </div>
       <div class="hourly-card">
@@ -188,7 +187,53 @@
       </div>
     </div>
     <div id="additional-info">
-      
+      <div id="uv-index-card" class="additional-info-card">
+        <img src="assets/additional-info-icons/uv-index.svg">
+        <span>UV</span>
+        <span id="uv-index">0 Very Weak</span>
+      </div>
+      <div id="feels-like-card" class="additional-info-card">
+        <img src="assets/additional-info-icons/feels-like.svg">
+        <span>Feels like</span>
+        <span id="feels-like">-3°</span>
+      </div>
+      <div id="humidity-card" class="additional-info-card">
+        <img src="assets/additional-info-icons/humidity.svg">
+        <span>Humidity</span>
+        <span id="humidity">94%</span>
+      </div>
+      <div id="chance-of-rain-card" class="additional-info-card">
+        <img src="assets/additional-info-icons/chance-of-rain.svg">
+        <span>Chance of Rain</span>
+        <span id="chance-of-rain">47%</span>
+      </div>
+      <div id="wind-speed-card" class="additional-info-card">
+        <img src="assets/additional-info-icons/wind-speed.svg">
+        <span>Wind Speed</span>
+        <span id="wind-speed">31 km/h</span>
+      </div>
+      <div id="visibility-card" class="additional-info-card">
+        <img src="assets/additional-info-icons/visibility.svg">
+        <span>Visibility</span>
+        <span id="visibility">6.6 km</span>
+      </div>
+      <div id="sunrise-sunset-card">
+        <div id="sunrise-sunset-icons">
+          <div id="sunrise-icon">
+            <img src="assets/additional-info-icons/sunrise.svg">
+            <span>Sunrise</span>
+          </div>
+          <div id="sunset-icon">
+            <img src="assets/additional-info-icons/sunset.svg">
+            <span>Sunset</span>
+          </div>
+        </div>
+        <hr id="sunrise-sunset-line">
+        <div id="sunrise-sunset-time">
+          <span id="sunrise-time">08:52</span>
+          <span id="sunset-time">15:19</span>
+        </div>
+      </div>
     </div>
   </main>
 </body>

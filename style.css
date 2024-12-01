@@ -101,10 +101,6 @@ main {
   font-size: 2.5vw;
 }
 
-#feels-like {
-  font-size: 1.7vw;
-}
-
 #condition-container {
   margin-top: 1vw;
   width: 15vw;
@@ -186,4 +182,100 @@ main {
   grid-area: additional-info;
   background-color: var(--main-dark-color);
   border-radius: 2vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1.5fr;
+  grid-template-areas: 
+  "uv-index feels-like humidity"
+  "chance-of-rain wind-speed visibility"
+  "sunrise-sunset sunrise-sunset sunrise-sunset";
+}
+
+.additional-info-card {
+  color: var(--main-light-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: min(1vw, 8px);
+  font-size: min(2vw, 24px);
+
+  img {
+    width: min(5vw, 48px);
+  }
+     
+}
+
+#uv-index-card {
+  grid-area: uv-index;
+}
+
+#feels-like-card {
+  grid-area: feels-like;
+}
+
+#humidity-card {
+  grid-area: humidity;
+}
+
+#chance-of-rain-card {
+  grid-area: chance-of-rain;
+}
+
+#wind-speed-card {
+  grid-area: wind-speed;
+}
+
+#visibility-card {
+  grid-area: visibility;
+}
+
+#sunrise-sunset-card {
+  padding-inline: 2vw;
+  grid-area: sunrise-sunset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#sunrise-sunset-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--main-light-color);
+    font-size: min(2.5vw, 24px);
+
+    img {
+      width: min(5vw, 48px);
+    }
+  }
+}
+
+#sunrise-icon {
+  align-items: flex-start;
+}
+
+#sunset-icon {
+  align-items: flex-end;
+}
+
+#sunrise-sunset-line {
+  width: 100%;
+  height: 5%;
+  background-color: #87b1e850;
+  border: none;
+  border-radius: 2vw;
+}
+
+#sunrise-sunset-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--main-light-color);
+  font-size: min(2.5vw, 24px);
 }
