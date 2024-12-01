@@ -174,8 +174,13 @@ main {
   }
 }
 
-#weekly-date {
-  width: 20vw;
+.weekly-date {
+  width: 20%;
+}
+
+.weekly-temperature {
+  width: 20%;
+  text-align: end;
 }
 
 #additional-info {
