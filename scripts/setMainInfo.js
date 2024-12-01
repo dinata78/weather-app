@@ -8,6 +8,6 @@ function setMainInfo(resolvedAddress, temp, icon, conditions) {
 
   location.textContent = resolvedAddress;
   temperature.textContent = `${temp}°`;
-  weatherIcon.src = `./assets/weather-icons/${icon}.svg`;
+  weatherIcon.src = `assets/weather-icons/${icon}.svg`;
   condition.textContent = conditions;
 }
