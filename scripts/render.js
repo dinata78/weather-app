@@ -40,9 +40,12 @@ function renderDayInfo(days, index) { //update current info's time, render every
 }
 
 function renderHourInfo(hours, index) { //update current-info's time, render main-info and additional info's data using hourly data
+  const currentInfoTime = document.querySelector("#current-info-time"); 
   setCurrentInfoTime(
-    document.querySelector("#current-info-time").textContent.slice(0, 6) 
-    + " " 
+    currentInfoTime.textContent.split(" ")[0]
+    + " "
+    + currentInfoTime.textContent.split(" ")[1]
+    + " - " 
     + hours[index]["datetime"].slice(0, 5)
   );
 

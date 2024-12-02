@@ -22,6 +22,24 @@ header {
   padding-block: min(3vw, 30px);
   padding-inline: min(4vw, 48px);
   font-size: min(2vw, 24px);
+  gap: 1%;
+}
+
+#current-info-time {
+  height: min(7vw, 36px);
+  padding-inline: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10vw;
+  background-color: #87b1e850;
+  color: var(--main-light-color);
+  font-size: 24px;
+  font-weight: 700;
+  
+  &:active {
+    border: 1px solid var(--main-light-color);
+  }
 }
 
 #search {
@@ -36,8 +54,8 @@ header {
   height: min(7vw, 36px);
   width: min(60vw, 350px);
   padding-inline: 5%;
-  font-size: min(3.5vw, 18px);
   color: var(--main-light-color);
+  font-size: min(3.5vw, 18px);
 }
 
 #search-input::placeholder {
@@ -70,19 +88,20 @@ header {
 main {
   height: 90%;
   width: 100%;
-  padding-block: min(4vw, 40px);
-  padding-inline: min(3vw, 30px);
+  padding-block: min(2vw, 14px);
+  padding-inline: min(4vw, 28px);
   display: grid;
   grid-template-columns: 3fr 1fr 5fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1.5fr 2fr;
   grid-template-areas: 
   "main-info hourly-info hourly-info" 
   "weekly-info weekly-info additional-info";
-  gap: 2vw;
+  gap: min(2vw, 14px);
 }
 
 #main-info {
   grid-area: main-info;
+  padding: min(2vw, 18px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,19 +109,19 @@ main {
   color: var(--main-light-color);
   background-color: var(--main-dark-color);
   border-radius: 2vw;
+  gap: 2vw;
 }
 
 #location {
-  font-size: 2vw;
+  font-size: min(2.7vw, 36px);
 }
 
 #temperature {
-  font-size: 2.5vw;
+  font-size: min(4.5vw, 60px);
+  font-weight: 700;
 }
 
 #condition-container {
-  margin-top: 1vw;
-  width: 15vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,16 +129,11 @@ main {
 }
 
 #weather-icon {
-  width: 2.5vw;
+  width: min(4vw, 60px);
 }
 
 #condition {
-  font-size: 2.2vw;
-}
-
-#current-info-time {
-  position: relative;
-  top: 10%;
+  font-size: min(3vw, 40px);
 }
 
 #hourly-info {
@@ -128,7 +142,7 @@ main {
   border-radius: 2vw;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 1fr 1fr 1ffr;
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .hourly-card {
@@ -136,6 +150,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: min(1.8vw, 18px);
   color: var(--main-light-color);
   
   img {
@@ -156,6 +171,7 @@ main {
   border-radius: 2vw;
   display: grid;
   grid-row: repeat(7, 1fr);
+  padding: 0.5vw;
 }
 
 .weekly-card {
@@ -193,7 +209,7 @@ main {
   border-radius: 2vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr 1.5fr;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas: 
   "uv-index feels-like humidity"
   "chance-of-rain wind-speed visibility"
