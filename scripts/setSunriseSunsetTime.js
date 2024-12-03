@@ -1,6 +1,6 @@
 export { setSunriseSunsetTime };
 
-function setSunriseSunsetTime(sunset_time, sunrise_time) { //update sunrise and sunset's time in the DOM
+function setSunriseSunsetTime(sunrise_time, sunset_time) { //update sunrise and sunset's time in the DOM
   const sunriseTime = document.querySelector("#sunrise-time");
   const sunsetTime = document.querySelector("#sunset-time");
 
