@@ -7,6 +7,8 @@
 :root {
   --main-light-color: #87b1e8;
   --main-dark-color: #000032cc;
+  --border-radius: calc(1vw + 1vh);
+  --header-size: min(calc(1vw + 1vh), 24px);
   --m-size: min(calc(1.2vw + 1.2vh), 27px);
   --h-size: min(calc(0.8vw + 0.8vh), 16px);
   --w-size: min(calc(0.9vw + 0.9vh), 18px);
@@ -26,22 +28,22 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-block: min(3vw, 30px);
-  padding-inline: min(4vw, 48px);
-  font-size: min(2vw, 24px);
+  padding-block: calc(var(--header-size) * 1.5);
+  padding-inline: calc(var(--header-size) * 2);
+  font-size: var(--header-size);
   gap: 1%;
 }
 
 #current-info-time {
-  height: min(7vw, 36px);
-  padding-inline: 2vw;
+  height: min(calc(var(--header-size) * 2), 36px);
+  padding-inline: calc(var(--header-size) * 1.2);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10vw;
+  border-radius: var(--border-radius);
   background-color: #87b1e850;
   color: var(--main-light-color);
-  font-size: 24px;
+  font-size: var(--header-size);
   font-weight: 700;
   
   &:active {
@@ -51,18 +53,18 @@ header {
 
 #search {
   display: flex;
-  gap: min(0.4vw, 4px);
+  gap: calc(var(--header-size) * 0.2);
 }
 
 #search-input {
+  width: min(calc(var(--header-size) * 20), 35vw);
+  height: min(calc(var(--header-size) * 2), 36px);
   border: none;
-  border-radius: 10vw 0 0 10vw; 
+  border-radius: var(--border-radius) 0 0 var(--border-radius); 
   background-color: #87b1e850;
-  height: min(7vw, 36px);
-  width: min(60vw, 350px);
   padding-inline: 5%;
   color: var(--main-light-color);
-  font-size: min(3.5vw, 18px);
+  font-size: calc(var(--header-size) * 0.75);
 }
 
 #search-input::placeholder {
@@ -75,9 +77,9 @@ header {
 }
 
 #search-button {
+  height: min(calc(var(--header-size) * 2), 36px);
+  width: min(calc(var(--header-size) * 2), 36px);
   border: none;
-  height: min(7vw, 36px);
-  width: min(7vw, 36px);
   background-color: #87b1e850;
   display: flex;
   justify-content: center;
