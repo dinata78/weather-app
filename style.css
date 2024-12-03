@@ -2,8 +2,15 @@
 * {
   box-sizing: border-box;
   outline: none;
+}
+
+:root {
   --main-light-color: #87b1e8;
   --main-dark-color: #000032cc;
+  --m-size: min(calc(1.2vw + 1.2vh), 27px);
+  --h-size: min(calc(0.8vw + 0.8vh), 16px);
+  --w-size: min(calc(1.1vw + 1.1vh), 20px);
+  --a-size: min(calc(1vw + 1vh), 18px);
 }
 
 body {
@@ -90,6 +97,14 @@ main {
   width: 100%;
   padding-block: min(2vw, 14px);
   padding-inline: min(4vw, 28px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-container {
+  height: 90%;
+  width: min(100%, 1080px);
   display: grid;
   grid-template-columns: 3fr 1fr 5fr;
   grid-template-rows: 1.5fr 2fr;
@@ -109,15 +124,16 @@ main {
   color: var(--main-light-color);
   background-color: var(--main-dark-color);
   border-radius: 2vw;
-  gap: 2vw;
+  gap: calc(var(--m-size) * 0.7);
 }
 
 #location {
-  font-size: min(2.7vw, 36px);
+  font-size: var(--m-size);
+  text-align: center;
 }
 
 #temperature {
-  font-size: min(4.5vw, 60px);
+  font-size: calc(var(--m-size) * 1.5);
   font-weight: 700;
 }
 
@@ -129,11 +145,11 @@ main {
 }
 
 #weather-icon {
-  width: min(4vw, 60px);
+  width: calc(var(--m-size) * 1.5);
 }
 
 #condition {
-  font-size: min(3vw, 40px);
+  font-size: var(--m-size);
 }
 
 #hourly-info {
@@ -150,11 +166,11 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: min(1.8vw, 18px);
   color: var(--main-light-color);
+  font-size: var(--h-size);
   
   img {
-    width: 3vw;
+    width: calc(var(--h-size) * 1.5);
   }
 
   &:hover {
@@ -171,7 +187,6 @@ main {
   border-radius: 2vw;
   display: grid;
   grid-row: repeat(7, 1fr);
-  padding: 0.5vw;
 }
 
 .weekly-card {
@@ -179,11 +194,10 @@ main {
   color: var(--main-light-color);
   align-items: center;
   justify-content: space-between;
-  padding: min(2vw, 12px);
-  font-size: min(2.5vw, 24px);
+  font-size: var(--w-size);
 
   img {
-    width: min(3vw, 32px);
+    width: calc(var(--w-size) * 1.5);
   }
 
   &:hover {
@@ -195,11 +209,13 @@ main {
 }
 
 .weekly-date {
-  width: 20%;
+  width: 40%;
+  padding-left: min(calc(2vw + 1vh), 24px);
 }
 
 .weekly-temperature {
-  width: 20%;
+  width: 25%;
+  padding-right: min(calc(2vw + 1vh), 24px);
   text-align: end;
 }
 
@@ -217,16 +233,18 @@ main {
 }
 
 .additional-info-card {
+  padding-block: min(calc(0.5vw + 0.5vh), 8px);
+  padding-inline: min(calc(0.5vw + 0.5vh), 4px);
   color: var(--main-light-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: min(1vw, 8px);
-  font-size: min(2vw, 24px);
+  font-size: var(--a-size);
 
   img {
-    width: min(5vw, 48px);
+    width: calc(var(--a-size) * 2);
   }
      
 }
@@ -273,10 +291,10 @@ main {
     flex-direction: column;
     justify-content: center;
     color: var(--main-light-color);
-    font-size: min(2.5vw, 24px);
+    font-size: var(--a-size);
 
     img {
-      width: min(5vw, 48px);
+      width: calc(var(--a-size) * 1.9);
     }
   }
 }
@@ -302,5 +320,53 @@ main {
   justify-content: space-between;
   align-items: center;
   color: var(--main-light-color);
-  font-size: min(2.5vw, 24px);
+  font-size: calc(var(--a-size) * 1.1);
+}
+
+@media screen and (max-width: 800px) {
+  
+  #hourly-info {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  
+  #hourly-info {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+}
+
+@media screen and (min-width: 2400px) and (min-height: 1200px)  {
+
+  #main-container {
+    width: 1366px;
+  }
+
+  :root {
+    --m-size: calc(min(calc(1.2vw + 1.2vh), 27px) * 1.3);
+    --h-size: calc(min(calc(0.8vw + 0.8vh), 16px) * 1.3);
+    --w-size: calc(min(calc(1.5vw + 1vh), 24px) * 1.3);
+    --a-size: calc(min(calc(1vw + 1vh), 18px) * 1.3);
+  }
+
+}
+
+@media screen and (min-width: 3840px) and (min-height: 2160px)  {
+
+  #main-container {
+    width: 2400px;
+  }
+ 
+  :root {
+    --m-size: calc(min(calc(1.2vw + 1.2vh), 27px) * 2);
+    --h-size: calc(min(calc(0.8vw + 0.8vh), 16px) * 2);
+    --w-size: calc(min(calc(1.5vw + 1vh), 24px) * 2);
+    --a-size: calc(min(calc(1vw + 1vh), 18px) * 2);
+  }
+
 }
