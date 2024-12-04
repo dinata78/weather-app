@@ -100,7 +100,7 @@ header {
   background-color: #87b1e850;
   padding-inline: 5%;
   color: var(--main-light-color);
-  font-size: calc(var(--header-size) * 0.75);
+  font-size: calc(var(--header-size) * 0.8);
 }
 
 #search-input::placeholder {
@@ -389,7 +389,14 @@ main {
 
 
 @media screen and (max-width: 800px) {
-  
+  :root {
+    --header-size: calc(0.8vw + 0.8vh);
+  }
+
+  main {
+    padding-inline: 2vw;
+  }
+
   #hourly-info {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
