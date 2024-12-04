@@ -34,6 +34,36 @@ header {
   gap: 1%;
 }
 
+#temperature-unit {
+  background-color: #87b1e850;
+  height: min(calc(var(--header-size) * 2), 36px);
+  padding-inline: calc(var(--header-size) * 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  color: var(--main-light-color);
+  font-size: calc(var(--header-size) * 1);
+  font-weight: 700;
+
+  button {
+    color: #87b1e850;
+    font-size: inherit;
+    background-color: transparent;
+    border: none;
+
+    &:hover, &:active {
+      color: inherit;
+      font-weight: inherit;
+    }
+  }
+}
+
+#temperature-unit button.selected {
+  color: inherit;
+  font-weight: inherit;
+}
+
 #current-info-time {
   height: min(calc(var(--header-size) * 2), 36px);
   padding-inline: calc(var(--header-size) * 1.2);
