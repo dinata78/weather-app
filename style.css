@@ -395,6 +395,8 @@ main {
 
   main {
     padding-inline: 2vw;
+    padding-block: 2vw;
+    align-items: flex-start;
   }
 
   #hourly-info {
