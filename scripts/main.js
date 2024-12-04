@@ -4,6 +4,7 @@ import { setLocation } from "./setLocation.js";
 import { toggleVisibility } from "./toggleVisibility.js";
 
 const weatherApp = (() => {
+  let isFirstRender = true;
 
   function firstRender() {
     const searchButton = document.querySelector("#search-button");
@@ -11,7 +12,8 @@ const weatherApp = (() => {
     searchButton.addEventListener("click", () => {
       const weatherData = getWeatherData();
       weatherData.then((data) => {
-        toggleVisibility.dayInfo();
+        if (isFirstRender === false) toggleVisibility.dayInfo();
+        else if (isFirstRender === true) isFirstRender = false;
         setTimeout(() => {
           setLocation(data.location);
           renderDayInfo(data["days"], 0);

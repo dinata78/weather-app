@@ -11,7 +11,7 @@
 </head>
 <body>
   <header>
-    <span id="current-info-time"></span>
+    <span id="current-info-time" class="hide"></span>
     <div id="search">
       <input id="search-input" type="text" placeholder="Search your location's weather">
       <button id="search-button" title="Search">
@@ -21,7 +21,7 @@
   </header>
   <main>
     <div id="main-container">
-      <div id="main-info">
+      <div id="main-info" class="hide">
         <span id="location"></span>
         <span id="temperature"></span>
         <div id="condition-container">
@@ -29,13 +29,13 @@
           <span id="condition"></span>
         </div>
       </div>
-      <div id="hourly-info">
+      <div id="hourly-info" class="hide">
         
       </div>
-      <div id="weekly-info">
+      <div id="weekly-info" class="hide">
   
       </div>
-      <div id="additional-info">
+      <div id="additional-info" class="hide">
         <div id="uv-index-card" class="additional-info-card">
           <img src="assets/additional-info-icons/uv-index.svg">
           <span>UV</span>
