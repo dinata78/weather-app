@@ -45,10 +45,16 @@ header {
   color: var(--main-light-color);
   font-size: var(--header-size);
   font-weight: 700;
+  opacity: 100%;
+  transition: opacity 0.5s;
   
   &:active {
     border: 1px solid var(--main-light-color);
   }
+}
+
+#current-info-time.hide {
+  opacity: 0%;
 }
 
 #search {
