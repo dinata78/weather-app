@@ -1,3 +1,5 @@
+import { celciusToFahrenheit } from "./celciusToFahrenheit.js";
+
 export { setAdditionalInfo };
 
 function uvIndexMeaning(uvIndex) { //return uv index's description/meaning
@@ -9,13 +11,17 @@ function uvIndexMeaning(uvIndex) { //return uv index's description/meaning
   else if (uvIndex > 10) return "Extreme";
 }
 
-function setAdditionalInfo(uv_index, feels_like, humidity_, chance_of_rain, wind_speed, visibility_) { //update additional info's data in the DOM
+function setAdditionalInfo(uv_index, feels_like, humidity_, chance_of_rain, wind_speed, visibility_, unit) { //update additional info's data in the DOM
   const uvIndex = document.querySelector("#uv-index");
   const feelsLike = document.querySelector("#feels-like");
   const humidity = document.querySelector("#humidity");
   const chanceOfRain = document.querySelector("#chance-of-rain");
   const windSpeed = document.querySelector("#wind-speed");
   const visibility = document.querySelector("#visibility");
+
+  if (unit === "fahrenheit") {
+    feels_like = celciusToFahrenheit(feels_like);
+  }
   
 
   uvIndex.textContent = uv_index + " " + uvIndexMeaning(uv_index);

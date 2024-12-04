@@ -11,8 +11,7 @@ async function fetchWeatherData(location) {
   return data;
 }
 
-function getWeatherData() {
-  const searchInput = document.querySelector("#search-input");
+function getWeatherData(searchedLocation) {
   
-  return fetchWeatherData(searchInput.value);
+  return fetchWeatherData(searchedLocation);
 }

@@ -1,8 +1,9 @@
+import { celciusToFahrenheit } from "./celciusToFahrenheit.js";
 import { renderHourInfo } from "./render.js";
 import { toggleVisibility } from "./toggleVisibility.js";
 export { setHourlyInfo };
 
-function setHourlyInfo(hours) { //update hourly-info's data in the DOM
+function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM
   const hourlyInfo = document.querySelector("#hourly-info");
   hourlyInfo.textContent = "";
 
@@ -16,9 +17,17 @@ function setHourlyInfo(hours) { //update hourly-info's data in the DOM
     hourlyTime.setAttribute("class", "hourly-time");
     hourlyTemperature.setAttribute("class", "hourly-temperature");
 
-    hourlyTime.textContent = hours[i]["datetime"].slice(0, 5);
-    hourlyWeatherIcon.src = "assets/weather-icons/" + hours[i]["icon"] + ".svg";
-    hourlyTemperature.textContent = hours[i]["temp"] + "°";
+    const hourly_time = hours[i]["datetime"].slice(0, 5);
+    const hourly_weather_icon = hours[i]["icon"];
+    let hourly_temperature = hours[i]["temp"];
+
+    if (unit === "fahrenheit") {
+      hourly_temperature = celciusToFahrenheit(hourly_temperature);
+    }
+
+    hourlyTime.textContent = hourly_time;
+    hourlyWeatherIcon.src = "assets/weather-icons/" + hourly_weather_icon + ".svg";
+    hourlyTemperature.textContent = hourly_temperature + "°";
 
     hourlyCard.appendChild(hourlyTime);
     hourlyCard.appendChild(hourlyWeatherIcon);
@@ -27,7 +36,7 @@ function setHourlyInfo(hours) { //update hourly-info's data in the DOM
     hourlyCard.addEventListener("click", () => {
       toggleVisibility.hourInfo();
       setTimeout(() => {
-        renderHourInfo(hours, i);
+        renderHourInfo(hours, i, unit);
         toggleVisibility.hourInfo();
       }, 500);
     });

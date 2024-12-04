@@ -1,9 +1,10 @@
 export { setWeeklyInfo };
+import { celciusToFahrenheit } from "./celciusToFahrenheit.js";
 import { renderDayInfo } from "./render.js";
 import { toggleVisibility } from "./toggleVisibility.js";
 import { translateDate } from "./translateDate.js";
 
-function setWeeklyInfo(days) { //update weekly-info's data in the DOM
+function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
   const weeklyInfo = document.querySelector("#weekly-info");
   weeklyInfo.textContent = "";
 
@@ -17,9 +18,17 @@ function setWeeklyInfo(days) { //update weekly-info's data in the DOM
     weeklyDate.setAttribute("class", "weekly-date");
     weeklyTemperature.setAttribute("class", "weekly-temperature");
 
-    weeklyDate.textContent = translateDate(days[i]["datetime"]);
-    weeklyWeatherIcon.src = "assets/weather-icons/" + days[i]["icon"] + ".svg";
-    weeklyTemperature.textContent = days[i]["temp"] + "°";
+    const weekly_date = translateDate(days[i]["datetime"]);
+    const weekly_weather_icon = days[i]["icon"];
+    let weekly_temperature = days[i]["temp"];
+
+    if (unit === "fahrenheit") {
+      weekly_temperature = celciusToFahrenheit(weekly_temperature);
+    }
+
+    weeklyDate.textContent = weekly_date;
+    weeklyWeatherIcon.src = "assets/weather-icons/" + weekly_weather_icon + ".svg";
+    weeklyTemperature.textContent = weekly_temperature + "°";
 
     weeklyCard.appendChild(weeklyDate);
     weeklyCard.appendChild(weeklyWeatherIcon);
@@ -28,7 +37,7 @@ function setWeeklyInfo(days) { //update weekly-info's data in the DOM
     weeklyCard.addEventListener("click", () => {
       toggleVisibility.dayInfo();
       setTimeout(() => {
-        renderDayInfo(days, i);
+        renderDayInfo(days, i, unit);
         toggleVisibility.dayInfo();
       }, 500);
     })
