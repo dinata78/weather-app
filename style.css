@@ -389,6 +389,7 @@ main {
 
 
 @media screen and (max-width: 800px) {
+
   :root {
     --header-size: calc(0.8vw + 0.8vh);
   }
@@ -399,9 +400,25 @@ main {
     align-items: flex-start;
   }
 
+  #main-container {
+    gap: 1vw;
+  }
+
   #hourly-info {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
+  }
+
+  .hourly-card {
+    &:hover, &:active {
+      opacity: 100%;;
+    }
+  }
+
+  .weekly-card {
+    &:hover, &:active {
+      opacity: 100%;;
+    }
   }
 
 }
