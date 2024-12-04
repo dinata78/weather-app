@@ -1,5 +1,6 @@
 export { setWeeklyInfo };
 import { renderDayInfo } from "./render.js";
+import { toggleVisibility } from "./toggleVisibility.js";
 import { translateDate } from "./translateDate.js";
 
 function setWeeklyInfo(days) { //update weekly-info's data in the DOM
@@ -25,7 +26,11 @@ function setWeeklyInfo(days) { //update weekly-info's data in the DOM
     weeklyCard.appendChild(weeklyTemperature);
 
     weeklyCard.addEventListener("click", () => {
-      renderDayInfo(days, i);
+      toggleVisibility.dayInfo();
+      setTimeout(() => {
+        renderDayInfo(days, i);
+        toggleVisibility.dayInfo();
+      }, 500);
     })
 
     weeklyInfo.appendChild(weeklyCard);

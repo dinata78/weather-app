@@ -127,6 +127,12 @@ main {
   background-color: var(--main-dark-color);
   border-radius: 2vw;
   gap: calc(var(--m-size) * 0.7);
+  opacity: 100%;
+  transition: opacity 0.5s;
+}
+
+#main-info.hide {
+  opacity: 0%;
 }
 
 #location {
@@ -161,6 +167,12 @@ main {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  opacity: 100%;
+  transition: opacity 0.5s;
+}
+
+#hourly-info.hide {
+  opacity: 0%;
 }
 
 .hourly-card {
@@ -190,6 +202,12 @@ main {
   border-radius: 2vw;
   display: grid;
   grid-row: repeat(7, 1fr);
+  opacity: 100%;
+  transition: opacity 0.5s;
+}
+
+#weekly-info.hide {
+  opacity: 0%;
 }
 
 .weekly-card {
@@ -235,6 +253,12 @@ main {
   "uv-index feels-like humidity"
   "chance-of-rain wind-speed visibility"
   "sunrise-sunset sunrise-sunset sunrise-sunset";
+  opacity: 100%;
+  transition: opacity 0.5s;
+}
+
+#additional-info.hide {
+  opacity: 0%;
 }
 
 .additional-info-card {
@@ -325,6 +349,8 @@ main {
   color: var(--main-light-color);
   font-size: calc(var(--a-size) * 1.1);
 }
+
+
 
 @media screen and (max-width: 800px) {
   

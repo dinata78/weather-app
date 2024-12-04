@@ -5,12 +5,10 @@ import { setAdditionalInfo } from "./setAdditionalInfo.js";
 import { setCurrentInfoTime } from "./setCurrentInfoTime.js";
 import { setSunriseSunsetTime } from "./setSunriseSunsetTime.js";
 import { translateDate } from "./translateDate.js";
-import { toggleInfos } from "./toggleInfos.js";
 
 export { renderDayInfo, renderHourInfo };
 
 function renderDayInfo(days, index) { //update current info's time, render everything on the page except for location using daily date
-  toggleInfos(0);
 
   setCurrentInfoTime(
     translateDate(days[index]["datetime"])
@@ -42,11 +40,9 @@ function renderDayInfo(days, index) { //update current info's time, render every
     days[index]["sunset"]
   );
 
-  toggleInfos(1);
 }
 
 function renderHourInfo(hours, index) { //update current-info's time, render main-info and additional info's data using hourly data
-  toggleInfos(0);
 
   const currentInfoTime = document.querySelector("#current-info-time"); 
   setCurrentInfoTime(
@@ -72,5 +68,4 @@ function renderHourInfo(hours, index) { //update current-info's time, render mai
     hours[index]["visibility"]
   );
 
-  toggleInfos(1);
 }

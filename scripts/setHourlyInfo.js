@@ -1,4 +1,5 @@
 import { renderHourInfo } from "./render.js";
+import { toggleVisibility } from "./toggleVisibility.js";
 export { setHourlyInfo };
 
 function setHourlyInfo(hours) { //update hourly-info's data in the DOM
@@ -24,7 +25,11 @@ function setHourlyInfo(hours) { //update hourly-info's data in the DOM
     hourlyCard.appendChild(hourlyTemperature);
 
     hourlyCard.addEventListener("click", () => {
-      renderHourInfo(hours, i);
+      toggleVisibility.hourInfo();
+      setTimeout(() => {
+        renderHourInfo(hours, i);
+        toggleVisibility.hourInfo();
+      }, 500);
     });
 
     hourlyInfo.appendChild(hourlyCard);
