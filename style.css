@@ -409,6 +409,7 @@ main {
 #initial-message-modal {
   position: fixed;
   top: 40vh;
+  max-width: 90vw;
   background-color: var(--main-dark-color);
   border: none;
   border-radius: calc(1.3vw + 1.3vh);
