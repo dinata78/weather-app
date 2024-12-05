@@ -3,6 +3,7 @@ import { renderDayInfo } from "./render.js";
 import { setLocation } from "./setLocation.js";
 import { toggleVisibility } from "./toggleVisibility.js";
 import { updateSelectedUnit } from "./updateSelectedUnit.js";
+import { showLoading, hideLoading } from "./loadingModal.js";
 
 const weatherApp = (() => {
   const searchInput = document.querySelector("#search-input");
@@ -13,9 +14,13 @@ const weatherApp = (() => {
 
   function render(unit, location) {
     if (location.trim() === "") return;
+
+    showLoading();
     
     const weatherData = getWeatherData(location);
     weatherData.then((data) => {
+
+      hideLoading();
 
       if (isFirstRender === false) toggleVisibility.dayInfo();
       else if (isFirstRender === true) isFirstRender = false;
