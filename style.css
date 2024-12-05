@@ -43,7 +43,7 @@ header {
   align-items: center;
   border-radius: var(--border-radius);
   color: var(--main-light-color);
-  font-size: calc(var(--header-size) * 1);
+  font-size: var(--header-size);
   font-weight: 700;
 
   button {
@@ -392,6 +392,26 @@ main {
 
   :root {
     --header-size: calc(0.8vw + 0.8vh);
+  }
+
+  #current-info-time {
+    height: calc(var(--header-size) * 2.5);
+    font-size: calc(var(--header-size) * 1.2);    
+  }
+
+  #temperature-unit {
+    height: calc(var(--header-size) * 2.5);
+    font-size: calc(var(--header-size) * 1.1);
+  }
+
+  #search-input {
+    height: calc(var(--header-size) * 2.5);
+    font-size: calc(var(--header-size) * 1.1);
+  }
+
+  #search-button {
+    width: calc(var(--header-size) * 2.5);
+    height: calc(var(--header-size) * 2.5);
   }
 
   main {
