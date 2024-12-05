@@ -406,6 +406,16 @@ main {
   animation: spin 1s linear infinite;
 }
 
+#initial-message-modal {
+  position: fixed;
+  top: 40vh;
+  background-color: var(--main-dark-color);
+  border: none;
+  border-radius: calc(1.3vw + 1.3vh);
+  color: var(--main-light-color);
+  font-size: calc(1.3vw  + 1.3vh);
+}
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);

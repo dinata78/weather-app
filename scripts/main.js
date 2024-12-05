@@ -4,6 +4,7 @@ import { setLocation } from "./setLocation.js";
 import { toggleVisibility } from "./toggleVisibility.js";
 import { updateSelectedUnit } from "./updateSelectedUnit.js";
 import { showLoading, hideLoading } from "./loadingModal.js";
+import { showInitialMessage, hideInitialMessage } from "./initialPageModal.js";
 
 const weatherApp = (() => {
   const searchInput = document.querySelector("#search-input");
@@ -23,8 +24,10 @@ const weatherApp = (() => {
       hideLoading();
 
       if (isFirstRender === false) toggleVisibility.dayInfo();
-      else if (isFirstRender === true) isFirstRender = false;
-
+      else if (isFirstRender === true) {
+        isFirstRender = false;
+        hideInitialMessage();
+      }
       setTimeout(() => {
         previousLocation = data.location;
         setLocation(data.location);
@@ -36,7 +39,7 @@ const weatherApp = (() => {
 
   }
 
-  function firstRender() {
+  function initEventListener() {
     const searchButton = document.querySelector("#search-button");
     const celciusUnitButton = document.querySelector("#celcius-unit");
     const fahrenheitUnitButton = document.querySelector("#fahrenheit-unit");
@@ -58,7 +61,12 @@ const weatherApp = (() => {
     } );
   }
 
-  return { firstRender };
+  function init() {
+    showInitialMessage();
+    initEventListener();
+  }
+
+  return { init };
 })();
 
-weatherApp.firstRender();
+weatherApp.init();
