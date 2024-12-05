@@ -406,7 +406,7 @@ main {
   }
 
   #search-input {
-    width: 40vw;
+    width: 45vw;
     height: calc(var(--header-size) * 2.5);
     font-size: calc(var(--header-size) * 1.1);
   }
