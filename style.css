@@ -70,6 +70,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   border-radius: var(--border-radius);
   background-color: #87b1e850;
   color: var(--main-light-color);
@@ -405,6 +406,7 @@ main {
   }
 
   #search-input {
+    width: 40vw;
     height: calc(var(--header-size) * 2.5);
     font-size: calc(var(--header-size) * 1.1);
   }
