@@ -397,7 +397,7 @@ main {
 
   #current-info-time {
     height: calc(var(--header-size) * 2.5);
-    font-size: calc(var(--header-size) * 1.2);    
+    font-size: calc(var(--header-size) * 1);    
   }
 
   #temperature-unit {
