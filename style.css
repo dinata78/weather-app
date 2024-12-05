@@ -487,10 +487,20 @@ main {
   }
 
   :root {
+    --header-size: calc(min(calc(1vw + 1vh), 24px) * 1.3);
     --m-size: calc(min(calc(1.2vw + 1.2vh), 27px) * 1.3);
     --h-size: calc(min(calc(0.8vw + 0.8vh), 16px) * 1.3);
     --w-size: calc(min(calc(1.5vw + 1vh), 24px) * 1.3);
     --a-size: calc(min(calc(1vw + 1vh), 18px) * 1.3);
+  }
+
+  #current-info-time, #temperature-unit, #search-input {
+    height: calc(var(--header-size) * 2);
+  }
+
+  #search-button {
+    width: calc(var(--header-size) * 2);
+    height: calc(var(--header-size) * 2);
   }
 
 }
@@ -502,6 +512,7 @@ main {
   }
  
   :root {
+    --header-size: calc(min(calc(1vw + 1vh), 24px) * 2);
     --m-size: calc(min(calc(1.2vw + 1.2vh), 27px) * 2);
     --h-size: calc(min(calc(0.8vw + 0.8vh), 16px) * 2);
     --w-size: calc(min(calc(1.5vw + 1vh), 24px) * 2);
