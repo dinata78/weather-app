@@ -12,17 +12,23 @@ const weatherApp = (() => {
   let previousLocation = "";
 
   function render(unit, location) {
+    if (location.trim() === "") return;
+    
     const weatherData = getWeatherData(location);
     weatherData.then((data) => {
+
       if (isFirstRender === false) toggleVisibility.dayInfo();
       else if (isFirstRender === true) isFirstRender = false;
+
       setTimeout(() => {
         previousLocation = data.location;
         setLocation(data.location);
         renderDayInfo(data["days"], 0, unit);
         toggleVisibility.dayInfo();
       }, 500);
+      
     });
+
   }
 
   function firstRender() {
