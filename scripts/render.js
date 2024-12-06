@@ -1,9 +1,9 @@
-import { setMainInfo } from "./setInfoUI/setMainInfo.js";
-import { setHourlyInfo } from "./setInfoUI/setHourlyInfo.js";
-import { setWeeklyInfo } from "./setInfoUI/setWeeklyInfo.js";
-import { setAdditionalInfo } from "./setInfoUI/setAdditionalInfo.js";
-import { setCurrentInfoTime } from "./setInfoUI/setCurrentInfoTime.js";
-import { setSunriseSunsetTime } from "./setInfoUI/setSunriseSunsetTime.js";
+import { setMainInfo } from "./set-info-ui/setMainInfo.js";
+import { setHourlyInfo } from "./set-info-ui/setHourlyInfo.js";
+import { setWeeklyInfo } from "./set-info-ui/setWeeklyInfo.js";
+import { setAdditionalInfo } from "./set-info-ui/setAdditionalInfo.js";
+import { setCurrentInfoTime } from "./set-info-ui/setCurrentInfoTime.js";
+import { setSunriseSunsetTime } from "./set-info-ui/setSunriseSunsetTime.js";
 import { translateDate } from "./support/translateDate.js";
 
 export { renderDayInfo, renderHourInfo };
