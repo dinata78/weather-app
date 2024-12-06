@@ -55,6 +55,11 @@ header {
       color: inherit;
       font-weight: inherit;
     }
+
+    &:focus {
+      border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
+      border-radius: 40%;
+    }
   }
 }
 
