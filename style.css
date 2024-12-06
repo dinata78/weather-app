@@ -58,6 +58,10 @@ header {
   }
 }
 
+#temperature-unit:active {
+  border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
+}
+
 #temperature-unit button.selected {
   color: inherit;
   font-weight: inherit;
@@ -178,10 +182,6 @@ main {
 #location {
   font-size: var(--m-size);
   text-align: center;
-}
-
-#temperature-unit:active {
-  border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
 }
 
 #temperature {
