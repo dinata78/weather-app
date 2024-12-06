@@ -150,6 +150,10 @@ main {
   "main-info hourly-info hourly-info" 
   "weekly-info weekly-info additional-info";
   gap: min(2vw, 14px);
+
+  > div {
+    border: calc(0.1vw + 0.1vh) solid var(--main-light-color);
+  }
 }
 
 #main-info {
@@ -414,7 +418,7 @@ main {
   top: 40vh;
   max-width: 90vw;
   background-color: var(--main-dark-color);
-  border: none;
+  border: calc(0.1vw + 0.1vh) solid var(--main-light-color);
   border-radius: calc(1.3vw + 1.3vh);
   color: var(--main-light-color);
   font-size: calc(1.3vw  + 1.3vh);
