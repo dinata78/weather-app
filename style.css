@@ -280,6 +280,10 @@ main {
   &:active {
     opacity: 100%;
   }
+  &:focus {
+    border: calc(var(--header-size) * 0.15) solid var(--main-light-color);
+    border-radius: var(--border-radius);
+  }
 }
 
 .weekly-date {

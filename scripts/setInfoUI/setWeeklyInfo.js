@@ -14,6 +14,7 @@ function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
     const weeklyWeatherIcon = document.createElement("img");
     const weeklyTemperature = document.createElement("span");
 
+    weeklyCard.setAttribute("tabindex", "0");
     weeklyCard.setAttribute("class", "weekly-card");
     weeklyDate.setAttribute("class", "weekly-date");
     weeklyTemperature.setAttribute("class", "weekly-temperature");
@@ -40,6 +41,12 @@ function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
         renderDayInfo(days, i, unit);
         toggleVisibility.dayInfo();
       }, 500);
+    });
+
+    weeklyCard.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        weeklyCard.click();
+      }
     })
 
     weeklyInfo.appendChild(weeklyCard);
