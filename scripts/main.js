@@ -5,6 +5,7 @@ import { toggleVisibility } from "./toggleVisibility.js";
 import { updateSelectedUnit } from "./support/updateSelectedUnit.js";
 import { showLoading, hideLoading } from "./modals/loadingModal.js";
 import { showMessage, hideMessage } from "./modals/messageModal.js";
+import { getLastLocationFromLocalStorage, setLastLocationToLocalStorage } from "./local-storage/localStorage.js";
 
 const weatherApp = (() => {
 
@@ -33,6 +34,7 @@ const weatherApp = (() => {
       }
       setTimeout(() => {
         previousLocation = data.location;
+        setLastLocationToLocalStorage(previousLocation);
         setLocation(data.location);
         renderDayInfo(data["days"], 0, unit);
         toggleVisibility.dayInfo();
@@ -92,6 +94,10 @@ const weatherApp = (() => {
   function init() {
     showMessage("initial");
     initEventListener();
+
+    if (getLastLocationFromLocalStorage()) {
+      render(unit, getLastLocationFromLocalStorage());
+    }
   }
 
   return { init };
