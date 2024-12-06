@@ -1,6 +1,6 @@
-import { celciusToFahrenheit } from "./celciusToFahrenheit.js";
-import { renderHourInfo } from "./render.js";
-import { toggleVisibility } from "./toggleVisibility.js";
+import { celciusToFahrenheit } from "../support/celciusToFahrenheit.js";
+import { renderHourInfo } from "../render.js";
+import { toggleVisibility } from "../toggleVisibility.js";
 export { setHourlyInfo };
 
 function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM

@@ -1,4 +1,4 @@
-export { getWeatherData };
+export { fetchWeatherData };
 
 async function fetchWeatherData(location) {
   const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/next6days?unitGroup=metric&key=LYVR2HYS7HN92FEU48Q49BVNF`);
@@ -9,9 +9,4 @@ async function fetchWeatherData(location) {
   }
 
   return data;
-}
-
-function getWeatherData(searchedLocation) {
-  
-  return fetchWeatherData(searchedLocation);
 }

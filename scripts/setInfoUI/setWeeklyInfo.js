@@ -1,8 +1,8 @@
 export { setWeeklyInfo };
-import { celciusToFahrenheit } from "./celciusToFahrenheit.js";
-import { renderDayInfo } from "./render.js";
-import { toggleVisibility } from "./toggleVisibility.js";
-import { translateDate } from "./translateDate.js";
+import { celciusToFahrenheit } from "../support/celciusToFahrenheit.js";
+import { renderDayInfo } from "../render.js";
+import { toggleVisibility } from "../toggleVisibility.js";
+import { translateDate } from "../support/translateDate.js";
 
 function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
   const weeklyInfo = document.querySelector("#weekly-info");

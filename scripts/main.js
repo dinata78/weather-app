@@ -1,10 +1,10 @@
-import { getWeatherData } from "./getWeatherData.js"
+import { fetchWeatherData } from "./fetch/fetchWeatherData.js"
 import { renderDayInfo } from "./render.js";
-import { setLocation } from "./setLocation.js";
+import { setLocation } from "./setInfoUI/setLocation.js";
 import { toggleVisibility } from "./toggleVisibility.js";
-import { updateSelectedUnit } from "./updateSelectedUnit.js";
-import { showLoading, hideLoading } from "./loadingModal.js";
-import { showMessage, hideMessage } from "./messageModal.js";
+import { updateSelectedUnit } from "./support/updateSelectedUnit.js";
+import { showLoading, hideLoading } from "./modals/loadingModal.js";
+import { showMessage, hideMessage } from "./modals/messageModal.js";
 
 const weatherApp = (() => {
   const searchInput = document.querySelector("#search-input");
@@ -18,7 +18,7 @@ const weatherApp = (() => {
 
     showLoading();
     
-    const weatherData = getWeatherData(location);
+    const weatherData = fetchWeatherData(location);
     weatherData.then((data) => {
 
       hideLoading();

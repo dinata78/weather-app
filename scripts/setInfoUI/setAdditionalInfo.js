@@ -1,4 +1,4 @@
-import { celciusToFahrenheit } from "./celciusToFahrenheit.js";
+import { celciusToFahrenheit } from "../support/celciusToFahrenheit.js";
 
 export { setAdditionalInfo };
 
