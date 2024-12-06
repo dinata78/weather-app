@@ -397,6 +397,7 @@ main {
 #loading-modal {
   border: none;
   background-color: transparent;
+  overflow: hidden;
 }
 
 #loading-modal::backdrop {
@@ -405,9 +406,9 @@ main {
 }
 
 #loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid var(--main-light-color);
+  width: calc(var(--header-size) * 2);
+  height: calc(var(--header-size) * 2);
+  border: calc(var(--header-size) * 0.22) solid var(--main-light-color);
   border-right-color: transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
