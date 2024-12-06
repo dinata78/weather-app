@@ -4,7 +4,7 @@ import { setLocation } from "./setLocation.js";
 import { toggleVisibility } from "./toggleVisibility.js";
 import { updateSelectedUnit } from "./updateSelectedUnit.js";
 import { showLoading, hideLoading } from "./loadingModal.js";
-import { showInitialMessage, hideInitialMessage } from "./initialPageModal.js";
+import { showMessage, hideMessage } from "./messageModal.js";
 
 const weatherApp = (() => {
   const searchInput = document.querySelector("#search-input");
@@ -26,7 +26,7 @@ const weatherApp = (() => {
       if (isFirstRender === false) toggleVisibility.dayInfo();
       else if (isFirstRender === true) {
         isFirstRender = false;
-        hideInitialMessage();
+        hideMessage();
       }
       setTimeout(() => {
         previousLocation = data.location;
@@ -62,7 +62,7 @@ const weatherApp = (() => {
   }
 
   function init() {
-    showInitialMessage();
+    showMessage();
     initEventListener();
   }
 

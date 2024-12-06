@@ -406,7 +406,7 @@ main {
   animation: spin 1s linear infinite;
 }
 
-#initial-message-modal {
+#message-modal {
   position: fixed;
   top: 40vh;
   max-width: 90vw;
