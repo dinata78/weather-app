@@ -13,6 +13,7 @@ function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM
     const hourlyWeatherIcon = document.createElement("img");
     const hourlyTemperature = document.createElement("span");
 
+    hourlyCard.setAttribute("tabindex", "0");
     hourlyCard.setAttribute("class", "hourly-card");
     hourlyTime.setAttribute("class", "hourly-time");
     hourlyTemperature.setAttribute("class", "hourly-temperature");
@@ -39,6 +40,12 @@ function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM
         renderHourInfo(hours, i, unit);
         toggleVisibility.hourInfo();
       }, 500);
+    });
+
+    hourlyCard.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        hourlyCard.click();
+      }
     });
 
     hourlyInfo.appendChild(hourlyCard);
