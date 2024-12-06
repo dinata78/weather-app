@@ -7,7 +7,6 @@ import { showLoading, hideLoading } from "./modals/loadingModal.js";
 import { showMessage, hideMessage } from "./modals/messageModal.js";
 
 const weatherApp = (() => {
-  const searchInput = document.querySelector("#search-input");
 
   let isFirstRender = true;
   let unit = "celcius";
@@ -50,9 +49,28 @@ const weatherApp = (() => {
   }
 
   function initEventListener() {
+    const root = document.querySelector(":root");
+    const searchInput = document.querySelector("#search-input");
     const searchButton = document.querySelector("#search-button");
     const celciusUnitButton = document.querySelector("#celcius-unit");
     const fahrenheitUnitButton = document.querySelector("#fahrenheit-unit");
+
+    root.addEventListener("keydown", (event) => {
+      if (event.key === "/") {
+        event.preventDefault();
+        searchInput.focus();
+      }
+      if (event.key === "Escape") {
+        document.activeElement.blur();
+      }
+    });
+
+    searchInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        searchInput.blur();
+        render(unit, searchInput.value);
+      }
+    });
 
     searchButton.addEventListener("click", () => {
       render(unit, searchInput.value);
