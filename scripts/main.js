@@ -18,15 +18,19 @@ const weatherApp = (() => {
 
     showLoading();
     
-    const weatherData = fetchWeatherData(location);
-    weatherData.then((data) => {
+    fetchWeatherData(location)
+    
+    .then((data) => {
 
       hideLoading();
 
-      if (isFirstRender === false) toggleVisibility.dayInfo();
-      else if (isFirstRender === true) {
+      if (isFirstRender) {
         isFirstRender = false;
         hideMessage();
+      }
+      else {
+        hideMessage();
+        toggleVisibility.dayInfo();
       }
       setTimeout(() => {
         previousLocation = data.location;
@@ -35,6 +39,12 @@ const weatherApp = (() => {
         toggleVisibility.dayInfo();
       }, 500);
       
+    })
+
+    .catch((error) => {
+      hideLoading();
+      console.error("Render error:", error.message);
+      showMessage("error");
     });
 
   }
@@ -62,7 +72,7 @@ const weatherApp = (() => {
   }
 
   function init() {
-    showMessage();
+    showMessage("initial");
     initEventListener();
   }
 
