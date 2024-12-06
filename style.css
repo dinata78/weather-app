@@ -131,7 +131,7 @@ header {
   align-items: center;
 }
 
-#search-button:active {
+#search-button:active, #search-button:focus {
   border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
 }
 
