@@ -1,7 +1,7 @@
 export { setWeeklyInfo };
 import { celciusToFahrenheit } from "../support/celciusToFahrenheit.js";
-import { renderDayInfo } from "../render.js";
-import { toggleVisibility } from "../toggleVisibility.js";
+import { renderDayInfo } from "./render.js";
+import { toggleVisibility } from "./toggleVisibility.js";
 import { translateDate } from "../support/translateDate.js";
 
 function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
