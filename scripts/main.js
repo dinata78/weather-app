@@ -1,7 +1,7 @@
 import { fetchWeatherData } from "./fetch/fetchWeatherData.js"
-import { renderDayInfo } from "./render.js";
-import { setLocation } from "./set-info-ui/setLocation.js";
-import { toggleVisibility } from "./toggleVisibility.js";
+import { renderDayInfo } from "./ui/render.js";
+import { setLocation } from "./ui/setLocation.js";
+import { toggleVisibility } from "./ui/toggleVisibility.js";
 import { updateSelectedUnit } from "./support/updateSelectedUnit.js";
 import { showLoading, hideLoading } from "./modals/loadingModal.js";
 import { showMessage, hideMessage } from "./modals/messageModal.js";
