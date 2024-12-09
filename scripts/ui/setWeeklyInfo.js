@@ -14,7 +14,7 @@ function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
     const weeklyWeatherIcon = document.createElement("img");
     const weeklyTemperature = document.createElement("span");
 
-    weeklyCard.setAttribute("tabindex", "0");
+    weeklyCard.setAttribute("tabindex", "0"); //add tabindex attribute to make element focusable
     weeklyCard.setAttribute("class", "weekly-card");
     weeklyDate.setAttribute("class", "weekly-date");
     weeklyTemperature.setAttribute("class", "weekly-temperature");
@@ -23,7 +23,7 @@ function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
     const weekly_weather_icon = days[i]["icon"];
     let weekly_temperature = days[i]["temp"];
 
-    if (unit === "fahrenheit") {
+    if (unit === "fahrenheit") { //convert temperature's value if current temperature unit is fahrenheit
       weekly_temperature = celciusToFahrenheit(weekly_temperature);
     }
 
@@ -35,19 +35,19 @@ function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
     weeklyCard.appendChild(weeklyWeatherIcon);
     weeklyCard.appendChild(weeklyTemperature);
 
-    weeklyCard.addEventListener("click", () => {
-      toggleVisibility.dayInfo();
+    weeklyCard.addEventListener("click", () => { //weekly-card's click event
+      toggleVisibility.dayInfo(); //weekly-info's elements fade
       setTimeout(() => {
         renderDayInfo(days, i, unit);
-        toggleVisibility.dayInfo();
+        toggleVisibility.dayInfo(); //weekly-info's elements appear again after 500ms
       }, 500);
     });
 
-    weeklyCard.addEventListener("keydown", (event) => {
+    weeklyCard.addEventListener("keydown", (event) => { //weekly-card's Event-key event (keybord support)
       if (event.key === "Enter") {
         weeklyCard.click();
       }
-    })
+    });
 
     weeklyInfo.appendChild(weeklyCard);
   }

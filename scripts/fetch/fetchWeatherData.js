@@ -10,7 +10,8 @@ async function fetchWeatherData(location) {
   }
 
   const json = await response.json();
-  const data = {
+
+  const data = { //get needed/necessary data from fetched data
     "location": json.resolvedAddress,
     "days": json.days,
   }

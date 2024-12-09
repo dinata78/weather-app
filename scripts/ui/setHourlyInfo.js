@@ -13,7 +13,7 @@ function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM
     const hourlyWeatherIcon = document.createElement("img");
     const hourlyTemperature = document.createElement("span");
 
-    hourlyCard.setAttribute("tabindex", "0");
+    hourlyCard.setAttribute("tabindex", "0"); //add tabindex attribute to make element focusable
     hourlyCard.setAttribute("class", "hourly-card");
     hourlyTime.setAttribute("class", "hourly-time");
     hourlyTemperature.setAttribute("class", "hourly-temperature");
@@ -22,7 +22,7 @@ function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM
     const hourly_weather_icon = hours[i]["icon"];
     let hourly_temperature = hours[i]["temp"];
 
-    if (unit === "fahrenheit") {
+    if (unit === "fahrenheit") { //convert temperature's value if current temperature unit is fahrenheit
       hourly_temperature = celciusToFahrenheit(hourly_temperature);
     }
 
@@ -34,15 +34,15 @@ function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM
     hourlyCard.appendChild(hourlyWeatherIcon);
     hourlyCard.appendChild(hourlyTemperature);
 
-    hourlyCard.addEventListener("click", () => {
-      toggleVisibility.hourInfo();
+    hourlyCard.addEventListener("click", () => { //hourly-card's click event
+      toggleVisibility.hourInfo(); //hour-info's elements fade
       setTimeout(() => {
         renderHourInfo(hours, i, unit);
-        toggleVisibility.hourInfo();
+        toggleVisibility.hourInfo(); //hour-info's elements appear again after 500ms
       }, 500);
     });
 
-    hourlyCard.addEventListener("keydown", (event) => {
+    hourlyCard.addEventListener("keydown", (event) => { //hourly-card's Event-key event (keybord support)
       if (event.key === "Enter") {
         hourlyCard.click();
       }

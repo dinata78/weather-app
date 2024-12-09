@@ -5,9 +5,9 @@ const toggleVisibility = (() => {
   const hourlyInfo = document.querySelector("#hourly-info");
   const weeklyInfo = document.querySelector("#weekly-info");
   const additionalInfo = document.querySelector("#additional-info");
-  const currentInfoTime = document.querySelector("#current-info-time")
+  const currentInfoTime = document.querySelector("#current-info-time");
 
-  function dayInfo() {
+  function dayInfo() { //toggle the class "hide" which will trigger transition on all elements that updates while we render day info
     mainInfo.classList.toggle("hide");
     hourlyInfo.classList.toggle("hide");
     weeklyInfo.classList.toggle("hide");
@@ -15,7 +15,7 @@ const toggleVisibility = (() => {
     currentInfoTime.classList.toggle("hide"); 
   }
 
-  function hourInfo() {
+  function hourInfo() { //toggle the class "hide" which will trigger transition on all elements that updates while we render hour info 
     mainInfo.classList.toggle("hide");
     additionalInfo.classList.toggle("hide");
     currentInfoTime.classList.toggle("hide"); 

@@ -7,7 +7,7 @@ function setMainInfo(temperature_, weather_icon, condition_, unit) { //update ma
   const weatherIcon = document.querySelector("#weather-icon");
   const condition = document.querySelector("#condition");
 
-  if (unit == "fahrenheit") {
+  if (unit == "fahrenheit") { //convert temperature's value if current unit is fahrenheit
     temperature_ = celciusToFahrenheit(temperature_);
   }
 

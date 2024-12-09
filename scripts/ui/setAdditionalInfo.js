@@ -19,7 +19,7 @@ function setAdditionalInfo(uv_index, feels_like, humidity_, chance_of_rain, wind
   const windSpeed = document.querySelector("#wind-speed");
   const visibility = document.querySelector("#visibility");
 
-  if (unit === "fahrenheit") {
+  if (unit === "fahrenheit") { //convert feels-like's value if current temperature unit is fahrenheit
     feels_like = celciusToFahrenheit(feels_like);
   }
   
