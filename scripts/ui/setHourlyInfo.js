@@ -36,7 +36,7 @@ function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM
     hourlyCard.appendChild(hourlyTemperature);
 
     hourlyCard.addEventListener("click", () => { //hourly-card's click event
-      fadeAnimation("hour", renderHourInfo, hours, i, unit); //render with animation
+      fadeAnimation("hour", 500, renderHourInfo, hours, i, unit); //render with animation
     });
 
     hourlyCard.addEventListener("keydown", (event) => { //hourly-card's Event-key event (keybord support)

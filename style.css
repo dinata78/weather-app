@@ -13,6 +13,7 @@
   --h-size: min(calc(0.8vw + 0.8vh), 16px);
   --w-size: min(calc(0.9vw + 0.9vh), 18px);
   --a-size: min(calc(1vw + 1vh), 18px);
+  --fade-duration: 500ms;
 }
 
 body {
@@ -46,7 +47,7 @@ header {
   font-size: var(--header-size);
   font-weight: 700;
   opacity: 100%;
-  transition: opacity 0.5s;
+  transition: opacity var(--fade-duration);
   
   &:active {
     border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
@@ -177,7 +178,7 @@ main {
   color: var(--main-light-color);
   gap: calc(var(--m-size) * 0.7);
   opacity: 100%;
-  transition: opacity 0.5s;
+  transition: opacity var(--fade-duration);
 }
 
 #main-info.hide {
@@ -216,7 +217,7 @@ main {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(3, 1fr);
   opacity: 100%;
-  transition: opacity 0.5s;
+  transition: opacity var(--fade-duration);
 }
 
 #hourly-info.hide {
@@ -254,7 +255,7 @@ main {
   display: grid;
   grid-row: repeat(7, 1fr);
   opacity: 100%;
-  transition: opacity 0.5s;
+  transition: opacity var(--fade-duration);
 }
 
 #weekly-info.hide {
@@ -308,7 +309,7 @@ main {
   "chance-of-rain wind-speed visibility"
   "sunrise-sunset sunrise-sunset sunrise-sunset";
   opacity: 100%;
-  transition: opacity 0.5s;
+  transition: opacity var(--fade-duration);
 }
 
 #additional-info.hide {

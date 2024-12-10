@@ -2,7 +2,10 @@ export { fadeAnimation };
 
 import { toggleVisibility } from "../ui/toggleVisibility.js";
 
-function fadeAnimation(type, func, ...params) {
+function fadeAnimation(type, duration_in_ms, func, ...params) {
+  const root = document.querySelector(":root");
+  root.style.setProperty("--fade-duration", duration_in_ms + "ms");
+
   let animation = 
     (type === "day") ? toggleVisibility.dayInfo 
     : (type === "hour") ? toggleVisibility.hourInfo 
@@ -12,5 +15,5 @@ function fadeAnimation(type, func, ...params) {
   setTimeout(() => {    
     func(...params);
     animation();
-  }, 500);
+  }, duration_in_ms);
 }

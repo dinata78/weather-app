@@ -36,7 +36,7 @@ function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
     weeklyCard.appendChild(weeklyTemperature);
 
     weeklyCard.addEventListener("click", () => { //weekly-card's click event
-      fadeAnimation("day", renderDayInfo, days, i, unit);
+      fadeAnimation("day", 500, renderDayInfo, days, i, unit);
     }); //render with animation
 
     weeklyCard.addEventListener("keydown", (event) => { //weekly-card's Event-key event (keybord support)
