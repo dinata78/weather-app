@@ -1,6 +1,7 @@
 import { celciusToFahrenheit } from "../support/celciusToFahrenheit.js";
 import { renderHourInfo } from "./render.js";
-import { toggleVisibility } from "./toggleVisibility.js";
+import { fadeAnimation } from "../animation/fadeAnimation.js"
+
 export { setHourlyInfo };
 
 function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM
@@ -35,11 +36,7 @@ function setHourlyInfo(hours, unit) { //update hourly-info's data in the DOM
     hourlyCard.appendChild(hourlyTemperature);
 
     hourlyCard.addEventListener("click", () => { //hourly-card's click event
-      toggleVisibility.hourInfo(); //hour-info's elements fade
-      setTimeout(() => {
-        renderHourInfo(hours, i, unit);
-        toggleVisibility.hourInfo(); //hour-info's elements appear again after 500ms
-      }, 500);
+      fadeAnimation("hour", renderHourInfo, hours, i, unit); //render with animation
     });
 
     hourlyCard.addEventListener("keydown", (event) => { //hourly-card's Event-key event (keybord support)

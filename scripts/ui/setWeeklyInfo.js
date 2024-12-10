@@ -1,7 +1,7 @@
 export { setWeeklyInfo };
 import { celciusToFahrenheit } from "../support/celciusToFahrenheit.js";
 import { renderDayInfo } from "./render.js";
-import { toggleVisibility } from "./toggleVisibility.js";
+import { fadeAnimation } from "../animation/fadeAnimation.js";
 import { translateDate } from "../support/translateDate.js";
 
 function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
@@ -36,12 +36,8 @@ function setWeeklyInfo(days, unit) { //update weekly-info's data in the DOM
     weeklyCard.appendChild(weeklyTemperature);
 
     weeklyCard.addEventListener("click", () => { //weekly-card's click event
-      toggleVisibility.dayInfo(); //weekly-info's elements fade
-      setTimeout(() => {
-        renderDayInfo(days, i, unit);
-        toggleVisibility.dayInfo(); //weekly-info's elements appear again after 500ms
-      }, 500);
-    });
+      fadeAnimation("day", renderDayInfo, days, i, unit);
+    }); //render with animation
 
     weeklyCard.addEventListener("keydown", (event) => { //weekly-card's Event-key event (keybord support)
       if (event.key === "Enter") {
