@@ -35,23 +35,20 @@ header {
 }
 
 #current-info-time {
+  background-color: var(--main-dark-color);
   height: min(calc(var(--header-size) * 2), 36px);
   padding-inline: calc(var(--header-size) * 1.2);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
   border-radius: var(--border-radius);
-  background-color: #87b1e850;
   color: var(--main-light-color);
   font-size: var(--header-size);
   font-weight: 700;
   opacity: 100%;
   transition: opacity var(--fade-duration);
-  
-  &:active {
-    border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
-  }
 }
 
 #current-info-time.hide {
@@ -59,12 +56,13 @@ header {
 }
 
 #temperature-unit {
-  background-color: #87b1e850;
+  background-color: var(--main-dark-color);
   height: min(calc(var(--header-size) * 2), 36px);
   padding-inline: calc(var(--header-size) * 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
+  border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
   border-radius: var(--border-radius);
   color: var(--main-light-color);
   font-size: var(--header-size);
@@ -88,10 +86,6 @@ header {
   }
 }
 
-#temperature-unit:active {
-  border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
-}
-
 #temperature-unit button.selected {
   color: inherit;
   font-weight: inherit;
@@ -103,11 +97,11 @@ header {
 }
 
 #search-input {
+  background-color: #87b1e850;
   width: min(calc(var(--header-size) * 20), 35vw);
   height: min(calc(var(--header-size) * 2), 36px);
   border: none;
   border-radius: var(--border-radius) 0 0 var(--border-radius); 
-  background-color: #87b1e850;
   padding-inline: 5%;
   color: var(--main-light-color);
   font-size: calc(var(--header-size) * 0.8);
@@ -132,8 +126,12 @@ header {
   border: none;
 }
 
-#search-button:active, #search-button:focus {
+#search-button:focus {
   border: calc(var(--header-size) * 0.1) solid var(--main-light-color);
+}
+
+#search-button:active {
+  border: calc(var(--header-size) * 0.15) solid var(--main-light-color);
 }
 
 #search-svg {
