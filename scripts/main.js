@@ -18,31 +18,30 @@ const weatherApp = (() => {
 
     showLoading();
     
-    fetchWeatherData(location)
-    
+    fetchWeatherData(location) //fetch data from weather API
     .then((data) => {
 
       hideLoading();
 
-      if (isFirstRender) {
+      if (isFirstRender) { //set isFirstRender to false when it's the first render
         isFirstRender = false;
         hideMessage();
       }
-      else {
+      else { //toggle visibility when it's not the first render for the fade out effect
         hideMessage();
         toggleVisibility.dayInfo();
       }
       setTimeout(() => {
         previousLocation = data.location;
-        setLastLocationToLocalStorage(previousLocation);
+        setLastLocationToLocalStorage(previousLocation); //save last-location to local storage
         setLocation(data.location);
-        renderDayInfo(data["days"], 0, unit);
+        renderDayInfo(data["days"], 0, unit); //render today's day-info
         toggleVisibility.dayInfo();
       }, 500);
       
     })
 
-    .catch((error) => {
+    .catch((error) => { //handle error fetch
       hideLoading();
       console.error("Render error:", error.message);
       showMessage("error");
@@ -57,44 +56,51 @@ const weatherApp = (() => {
     const celciusUnitButton = document.querySelector("#celcius-unit");
     const fahrenheitUnitButton = document.querySelector("#fahrenheit-unit");
 
+    //keyboard support
     root.addEventListener("keydown", (event) => {
+      //jump to search bar key
       if (event.key === "/") {
         event.preventDefault();
         searchInput.focus();
       }
+      //remove currently active element's focus key
       if (event.key === "Escape") {
         document.activeElement.blur();
       }
     });
 
-    searchInput.addEventListener("keydown", (event) => {
+  
+    searchInput.addEventListener("keydown", (event) => { 
+      //render while user click 'Enter' key inside search-input
       if (event.key === "Enter") {
         searchInput.blur();
         render(unit, searchInput.value);
       }
     });
-
+    
+    //render while user click search-button
     searchButton.addEventListener("click", () => {
       render(unit, searchInput.value);
     });
 
-    celciusUnitButton.addEventListener("click", () => {
+    celciusUnitButton.addEventListener("click", () => { //celcius button event
       unit = "celcius";
       updateSelectedUnit(unit);
       render(unit, previousLocation);
     });
 
-    fahrenheitUnitButton.addEventListener("click", () => {
+    fahrenheitUnitButton.addEventListener("click", () => { //fahrenheit button event
       unit = "fahrenheit";
       updateSelectedUnit(unit);
       render(unit, previousLocation);
     } );
   }
 
-  function init() {
+  function init() { //initialization
     showMessage("initial");
     initEventListener();
 
+    //render if last-location exist in local storage
     if (getLastLocationFromLocalStorage()) {
       render(unit, getLastLocationFromLocalStorage());
     }
